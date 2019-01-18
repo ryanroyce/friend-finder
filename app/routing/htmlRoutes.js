@@ -13,3 +13,5 @@ module.exports = (app) =>{
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 };
+
+// note: the template for this code was taken from the hot restaurants activity from week 13
