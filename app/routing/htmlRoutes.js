@@ -1,10 +1,10 @@
 // linking the path package
-var path = require("path");
+const path = require("path");
 
 // establishing the html routes
 module.exports = (app) =>{
     // what happens when we visit "/survey"
-  app.get("/survey", function(req, res) {
+  app.get("/survey", (req, res) =>{
     res.sendFile(path.join(__dirname, "../public/survey.html"));
   });
 

@@ -1,5 +1,5 @@
 // from the data folder we require friendsArray.js that has the array for all of the friends
-var friendsArray = require("../data/friends.js");
+let friendsArray = require("../data/friends.js");
 
 // utilizing the hot restaurant activity as a template we create the API routes
 module.exports = (app) => {

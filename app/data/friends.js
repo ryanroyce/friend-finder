@@ -1,4 +1,4 @@
-var friendsArray = [
+let friendsArray = [
     {
         name: "Jimmy Dwyer",
         picture: "https://vignette.wikia.nocookie.net/vsbattles/images/7/7e/Earthworm_jim_by_zeefster-d46dp3z.png/revision/latest?cb=20170102021211",

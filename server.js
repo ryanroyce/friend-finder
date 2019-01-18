@@ -1,11 +1,11 @@
 // requiring the express package
-var express = require("express");
+const express = require("express");
 
 // creates an express server
-var app = express();
+const app = express();
 
 // setting the port
-var PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 // middleware
 app.use(express.urlencoded({extended: true}));
@@ -19,5 +19,5 @@ require("./app/routing/htmlRoutes")(app);
 app.listen(PORT, () =>{
     console.log("App listening on PORT: " + PORT);
 })
-
 // note: this template was modified from the hot restaurant activity we did in week 13
+
