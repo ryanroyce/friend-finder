@@ -14,7 +14,7 @@ module.exports = (app) => {
         //    looping through the friendsArray to push a new friend to the end of the JSON data
         for (i = 0; i = friendsArray.length; i++) {
             friendsArray[i].push(userdata);
-        }
+        };
     });
 
 // from the hot restaurants activity we will use this to clear out the friends array if needed
