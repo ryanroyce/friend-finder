@@ -35,16 +35,16 @@ let friendsArray = [
         name: "Erlich Bachman",
         picture: "http://s3.amazonaws.com/assets.piedpiper.pro/app/uploads/2016/06/piedpiper_308_blog_01.jpg",
         scores: [
+            "1",
             "2",
-            "4",
+            "1",
             "2",
-            "4",
+            "1",
             "2",
-            "4",
+            "1",
             "2",
-            "4",
-            "2",
-            "4"
+            "1",
+            "2"
         ]
     }
 ];
