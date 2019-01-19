@@ -18,14 +18,12 @@ module.exports = (app) => {
         // these variables will be used later to store the difference in values from the submitted numerical input for each question in the array
         let storeTotaldifference = [];
         
-        // this is going to be the absolute value of the total difference from the user input
-        let results = 0;
         // user data will store the request.body pointer
         let userData = req.body;
         //    looping through the friendsArray to push a new friend to the end of the JSON data
         for (i = 0; i < friendsArray.length; i++) {
-            // friendsArray[i].push(userData);
-
+            let results = 0;
+            //    nested for loop
             for (var n = 0; n < friendsArray[i].scores.length; n++) {
                 results += (parseInt(userData.scores[n]) - parseInt(friendsArray[i].scores[n]));
             }
