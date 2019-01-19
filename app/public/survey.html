@@ -151,26 +151,27 @@
 
         <hr>
 
-        <div class="modal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
+        <div class="modal" id="matchModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title">Modal title</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="modal-body">
-                      <p>Modal body text goes here.</p>
+                        <h1 id="matchName"></h1>
+                        <img id="matchPicture" src="" alt="">
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
-                  </div>
                 </div>
-              </div>
-              
+            </div>
+        </div>
+
         <footer class="footer">
             <div class="container">
                 <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub
@@ -181,28 +182,34 @@
     </div>
     <script type="text/javascript">
         // the function for what happens when we click the submit button AKA an on click event
-        $("#submit").on("click", (event) =>{
-          event.preventDefault();
-        
-            // Create an object for the user"s data
-            var formInput = {
-              name: $("#name").val().trim(),
-              picture: $("#picture").val().trim(),
-              scores: [
-                $("#question1").val().trim(),
-                $("#question1").val().trim(),
-                $("#question1").val().trim(),
-                $("#question1").val().trim(),
-                $("#question1").val().trim(),
-                $("#question1").val().trim(),
-                $("#question1").val().trim(),
-                $("#question1").val().trim(),
-                $("#question1").val().trim(),
-                $("#question1").val().trim()
-              ]
+        $("#submit").on("click", (event) => {
+            event.preventDefault();
+
+            // creating a variable to turn the input from the specified divs into a value that we will compile and use in the backend
+            var userData = {
+                name: $("#name").val().trim(),
+                picture: $("#picture").val().trim(),
+                scores: [
+                    $("#question1").val().trim(),
+                    $("#question1").val().trim(),
+                    $("#question1").val().trim(),
+                    $("#question1").val().trim(),
+                    $("#question1").val().trim(),
+                    $("#question1").val().trim(),
+                    $("#question1").val().trim(),
+                    $("#question1").val().trim(),
+                    $("#question1").val().trim(),
+                    $("#question1").val().trim()
+                ]
             };
+            $.post("/api/friends", userData,  (data) =>{
+                $("#matchName").text(data.name);
+                $("#matchPicture").attr("src", data.picture);
+                $("#matchModal").modal("toggle");
+            });
+
         });
-      </script>
+    </script>
 
     <script src="logic.js"></script>
 </body>

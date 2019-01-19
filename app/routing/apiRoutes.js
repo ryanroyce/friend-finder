@@ -10,10 +10,10 @@ module.exports = (app) => {
 
     // API POST Requests
     app.post("/api/friends", (req, res) => {
-        var userdata = req.body;
+        var userData = req.body;
         //    looping through the friendsArray to push a new friend to the end of the JSON data
         for (i = 0; i = friendsArray.length; i++) {
-            friendsArray[i].push(userdata);
+            friendsArray[i].push(userData);
         };
     });
 
