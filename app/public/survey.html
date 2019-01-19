@@ -21,8 +21,8 @@
         <h3>Name: (Required)</h3>
         <input type="text" id="name" class="form-control">
 
-        <h3>Link to Photo of You: (Required)</h3>
-        <input type="text" id="photo" class="form-control">
+        <h3>Link to picture of You: (Required)</h3>
+        <input type="text" id="picture" class="form-control">
         <hr>
 
         <h3>Question 1: </h3>
@@ -150,6 +150,27 @@
             Submit</button>
 
         <hr>
+
+        <div class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
         <footer class="footer">
             <div class="container">
                 <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub
@@ -158,10 +179,30 @@
         </footer>
 
     </div>
-
-
-    </div>
-
+    <script type="text/javascript">
+        // the function for what happens when we click the submit button AKA an on click event
+        $("#submit").on("click", (event) =>{
+          event.preventDefault();
+        
+            // Create an object for the user"s data
+            var formInput = {
+              name: $("#name").val().trim(),
+              picture: $("#picture").val().trim(),
+              scores: [
+                $("#question1").val().trim(),
+                $("#question1").val().trim(),
+                $("#question1").val().trim(),
+                $("#question1").val().trim(),
+                $("#question1").val().trim(),
+                $("#question1").val().trim(),
+                $("#question1").val().trim(),
+                $("#question1").val().trim(),
+                $("#question1").val().trim(),
+                $("#question1").val().trim()
+              ]
+            };
+        });
+      </script>
 
     <script src="logic.js"></script>
 </body>
