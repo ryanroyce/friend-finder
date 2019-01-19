@@ -1,8 +1,8 @@
+// require the array-sort package
 let arraySort = require("array-sort");
 
 // from the data folder we require friendsArray.js that has the array for all of the friends
 let friendsArray = require("../data/friends.js");
-
 
 // utilizing the hot restaurant activity as a template we create the API routes
 module.exports = (app) => {
@@ -28,13 +28,13 @@ module.exports = (app) => {
                 results += (parseInt(userData.scores[n]) - parseInt(friendsArray[i].scores[n]));
             }
             //then we push the persons name, photo and difference in score into a new array//
-            storeTotaldifference.push({ name: friendsArray[i].name, picture: friendsArray[i].picture, totalDifference: Math.abs(results) });
+            storeTotaldifference.push({name:friendsArray[i].name, picture: friendsArray[i].picture, totalDifference: Math.abs(results)});
         };
 
     arraySort(storeTotaldifference, 'totalDifference');
-
+    // push the userdata into the friends array, this will create more matches to choose from.
     friendsArray.push(userData);
-
+    // return the results of the absolute value. phils pseudocode was instrumental in implementing the nested for loops
     return res.json(storeTotaldifference[0]);
     });
 
