@@ -17,7 +17,6 @@ require("./app/routing/htmlRoutes")(app);
 
 // starting the server/making sure its working with a console.log
 app.listen(PORT, () =>{
-    console.log("App listening on PORT: " + PORT);
+    console.log(`App listening on PORT: ${PORT}`);
 })
 // note: this template was modified from the hot restaurant activity we did in week 13
-
